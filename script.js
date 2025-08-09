@@ -11,7 +11,22 @@ document.addEventListener('DOMContentLoaded', function() {
     initShoppingCart();
     initUserLogin();
     initContactForm();
+    enableLazyImages();
 });
+
+// Lightweight lazy-loading for non-hero images
+function enableLazyImages() {
+    try {
+        document.querySelectorAll('img').forEach(img => {
+            if (!img.closest('.hero')) {
+                img.loading = 'lazy';
+                img.decoding = 'async';
+            }
+        });
+    } catch (_) {
+        // no-op: ensure no runtime errors
+    }
+}
 
 // Shopping Cart Functionality
 function initShoppingCart() {

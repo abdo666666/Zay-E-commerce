@@ -1,183 +1,102 @@
-# Zay - Modern E-commerce Website
+# Zay — Modern E‑commerce Template (HTML/CSS/JS)
 
-موقع إلكتروني متطور ومتجاوب مبني بـ HTML و CSS و JavaScript. هذا المشروع يحول تصميم Zay إلى موقع إلكتروني كامل الوظائف مع ميزات تفاعلية ورسوم متحركة سلسة.
+A modern, responsive, and accessible single‑page e‑commerce template built with plain HTML, CSS, and vanilla JavaScript. No build step. Just open `index.html`.
 
-## 🌟 الميزات
+## ✨ Highlights
+- **Clean, modern UI** with polished micro‑interactions
+- **Fully responsive**: desktop, tablet, and mobile
+- **Sticky header** with refined action icons (Search, Cart, User)
+- **Smooth animations** and scroll‑in reveals
+- **Zero dependencies needed to run**
 
-### التصميم والتخطيط
-- **تصميم حديث ونظيف**: تخطيط إلكتروني احترافي مع اهتمام بالتفاصيل
-- **متجاوب بالكامل**: يعمل بشكل مثالي على أجهزة الكمبيوتر والتابلت والهواتف المحمولة
-- **رسوم متحركة سلسة**: رسوم متحركة CSS وانتقالات لتحسين تجربة المستخدم
-- **رأس ثابت**: التنقل يبقى في الأعلى أثناء التمرير
-- **خط جميل**: استخدام عائلة خط Poppins للمظهر الحديث
+## 🧩 Tech Stack
+- HTML5, CSS3 (Flexbox/Grid), JavaScript (ES6+)
+- Font Awesome icons, Google Fonts (Poppins)
 
-### الميزات التفاعلية
-- **عرض شرائح دوار تلقائي**: قسم رئيسي مع انتقالات شرائح تلقائية
-- **قائمة الهاتف المحمول**: قائمة همبرغر للأجهزة المحمولة
-- **وظيفة البحث**: بحث نافذة منبثقة مع اقتراحات شائعة
-- **نوافذ المنتجات**: انقر على المنتجات لعرض المعلومات التفصيلية
-- **اشتراك النشرة الإخبارية**: التحقق من صحة البريد الإلكتروني وإشعارات النجاح
-- **تمرير سلس**: روابط التنقل مع سلوك التمرير السلس
+## 🚀 Getting Started
+1. Download or clone this folder
+2. Open `index.html` in your browser
+3. Optional local server for better testing:
+   - Python: `python -m http.server 5500`
+   - Node (http-server): `npx http-server -p 5500 --silent`
+   Then open `http://localhost:5500/`
 
-### الميزات الجديدة المضافة
-- **سلة التسوق الكاملة**: إضافة المنتجات، تعديل الكمية، إزالة المنتجات
-- **نظام تسجيل الدخول**: تسجيل الدخول والتسجيل مع التحقق من صحة البيانات
-- **قسم من نحن**: معلومات عن الشركة وميزاتها
-- **قسم الاتصال**: نموذج اتصال مع معلومات الشركة
-- **حفظ البيانات**: حفظ سلة التسوق في المتصفح
-- **إشعارات تفاعلية**: رسائل نجاح وخطأ للمستخدم
-
-### الأقسام
-1. **الشريط العلوي**: معلومات الاتصال وروابط وسائل التواصل الاجتماعي
-2. **الرأس**: الشعار والتنقل وأزرار الإجراءات (البحث، السلة، المستخدم)
-3. **القسم الرئيسي**: عرض شرائح ديناميكي مع عرض المنتجات
-4. **الفئات**: ثلاث فئات رئيسية للمنتجات مع تأثيرات التحويم
-5. **المنتجات المميزة**: بطاقات المنتجات مع التقييمات والمراجعات
-6. **من نحن**: معلومات الشركة وميزاتها
-7. **اتصل بنا**: نموذج الاتصال ومعلومات الشركة
-8. **التذييل**: معلومات الشركة وروابط المنتجات والاشتراك في النشرة
-
-## 🚀 البدء
-
-### المتطلبات المسبقة
-- متصفح ويب حديث (Chrome, Firefox, Safari, Edge)
-- لا يلزم برامج إضافية - يعمل بالكامل في المتصفح
-
-### التثبيت
-1. قم بتحميل أو استنساخ ملفات المشروع
-2. افتح `index.html` في متصفح الويب الخاص بك
-3. سيتم تحميل الموقع فوراً مع جميع الميزات العاملة
-
-### هيكل الملفات
+## 📁 Project Structure
 ```
 zay-website/
-├── index.html          # الهيكل الرئيسي HTML
-├── styles.css          # جميع أنماط CSS والرسوم المتحركة
-├── script.js           # وظائف JavaScript
-└── README.md           # هذا الملف
+├── index.html          # Markup & page sections
+├── styles.css          # All styles & animations
+├── script.js           # Interactions and UI logic
+└── README.md
 ```
 
-## 🎨 ميزات التصميم
+## ⚙️ Interactive Features
+- **Hero carousel** with seamless transitions and optional auto‑rotation
+- **Mobile navigation** with a collapsible menu button
+- **Search modal** with popular suggestions
+- **Product cards** with hover overlay and quick actions
+- **Newsletter subscription** with email validation and toasts
+- **Smooth scrolling** for in‑page navigation
 
-### نظام الألوان
-- **الأخضر الأساسي**: #20c997 (أخضر فيروزي للعناصر التجارية)
-- **الرمادي الداكن**: #2c3e50 (للرؤوس والتذييلات)
-- **الرمادي الفاتح**: #f8f9fa (للخلفيات)
-- **الأبيض**: #ffffff (للبطاقات ومناطق المحتوى)
+## 🛒 Shopping Cart (Client‑side)
+- Add products, change quantities, and remove items
+- Cart persists in `localStorage`
+- Live total price and item count badge
+- Cart sidebar opens automatically after adding a product
 
-### الخطوط
-- **عائلة الخط**: Poppins (Google Fonts)
-- **الأوزان**: 300, 400, 500, 600, 700
-- **متجاوب**: أحجام الخطوط تتكيف مع أحجام الشاشات المختلفة
+## 🔐 Auth (UI only)
+- Simple Login/Register modal with basic validation (demo only)
 
-### الرسوم المتحركة
-- **رسوم متحركة عائمة**: عرض المنتج الرئيسي
-- **تأثيرات التحويم**: البطاقات ترفع وتكبر عند التحويم
-- **رسوم متحركة ظهور تدريجي**: العناصر تظهر تدريجياً عند التمرير
-- **انتقالات سلسة**: جميع العناصر التفاعلية لها انتقالات سلسة
+## ✅ Recent Enhancements (Safe & Non‑Breaking)
+- Replaced placeholder images with local assets and corrected image paths (forward slashes)
+- Smoother carousel updates (no “refresh” flicker) with configurable autoplay
+- Hero image scaled down by ~30% (`max-width: 70%`) for better visual balance
+- Refined header actions: circular buttons, subtle hover/press effects
+- Notification badges moved outside buttons (cleaner) and auto‑hidden when zero
+- Cart opens on “Add to Cart”; count badge updates correctly
+- Added `aria-label` for key buttons to improve accessibility
+- Enabled lazy‑loading for non‑hero images via `enableLazyImages()`
+- Added a concise meta description for basic SEO
 
-## 📱 التصميم المتجاوب
-
-الموقع متجاوب بالكامل ومحسن لـ:
-- **سطح المكتب**: 1200 بكسل وما فوق
-- **التابلت**: 768 إلى 1199 بكسل
-- **الهاتف المحمول**: أقل من 768 بكسل
-
-### ميزات الهاتف المحمول
-- قائمة تنقل قابلة للطي
-- أزرار وتفاعلات مناسبة للمس
-- تخطيطات محسنة للشاشات الصغيرة
-- إيماءات السحب للعرض (مخطط للتحسين)
-
-## 🔧 التخصيص
-
-### تغيير الألوان
-عدّل متغيرات CSS في `styles.css`:
-```css
-:root {
-    --primary-color: #20c997;
-    --dark-color: #2c3e50;
-    --light-bg: #f8f9fa;
-}
+## 🧪 Useful Tweaks
+### Carousel configuration (`script.js` > `initCarousel()`)
+```js
+// Toggle autoplay and adjust pace (ms)
+const AUTOPLAY = true;
+const INTERVAL = 8000;
 ```
 
-### إضافة المنتجات
-لإضافة المزيد من المنتجات، كرر هيكل بطاقة المنتج في `index.html`:
-```html
-<div class="product-card" data-product-id="4" data-price="299.00">
-    <div class="product-image">
-        <img src="your-image.jpg" alt="Product Name">
-        <div class="product-overlay">
-            <button class="add-to-cart-btn" data-product-id="4">Add to Cart</button>
-        </div>
-    </div>
-    <div class="product-info">
-        <div class="rating">
-            <i class="fas fa-star"></i>
-            <!-- أضف المزيد من النجوم حسب الحاجة -->
-        </div>
-        <div class="price">$299.00</div>
-        <h3>Product Name</h3>
-        <p>Product description...</p>
-        <div class="reviews">Reviews (15)</div>
-    </div>
-</div>
+### Slides content (`script.js` > `updateHeroContent()`)
+```js
+const slides = [
+  { title: 'Proident occaecat', subtitle: 'Aliquip ex ea commodo consequat', image: 'images/Curology Product.jpg' },
+  { title: 'Premium Quality',   subtitle: 'Best Products for You',            image: 'images/Curology Product.jpg' },
+  { title: 'Special Offers',    subtitle: 'Limited Time Deals',               image: 'images/Curology Product.jpg' }
+];
 ```
 
-### تعديل المحتوى
-- حدث محتوى النص مباشرة في `index.html`
-- غيّر الصور باستبدال روابط placeholder
-- عدّل محتوى العرض في دالة `updateHeroContent()` في `script.js`
+### Accessibility
+- `aria-label` on header action buttons
+- Visible focus states on interactive controls
 
-## 🛠️ التفاصيل التقنية
+### Performance
+- Non‑hero images are lazy‑loaded (and decoded async) for faster initial render
+- Consider exporting images as WebP/AVIF for further gains
 
-### التقنيات المستخدمة
-- **HTML5**: هيكل ترميز دلالي
-- **CSS3**: تنسيق حديث مع Flexbox و Grid
-- **JavaScript (ES6+)**: وظائف تفاعلية
-- **Font Awesome**: أيقونات لعناصر واجهة المستخدم
-- **Google Fonts**: خط Poppins
+## 🎨 Design Notes
+- Primary color: `#20c997`
+- Dark (header/footer): `#2c3e50`
+- Light backgrounds: `#f8f9fa`
+- Typeface: Poppins (300/400/500/600/700)
 
-### دعم المتصفحات
-- Chrome 60+
-- Firefox 55+
-- Safari 12+
-- Edge 79+
+## 🌐 Browser Support
+Chrome 60+, Firefox 55+, Safari 12+, Edge 79+
 
-### ميزات الأداء
-- CSS محسن مع محددات فعالة
-- JavaScript ضئيل للتحميل السريع
-- صور متجاوبة مع أحجام مناسبة
-- رسوم متحركة سلسة باستخدام تحويلات CSS
+## 📄 License
+MIT — see `LICENSE` (or include your preferred license)
 
-## 🎯 التحسينات المستقبلية
-
-### الميزات المخططة
-- **تصفية المنتجات**: فلاتر الفئة والسعر
-- **تكامل الدفع**: تكامل Stripe أو PayPal
-- **لوحة الإدارة**: نظام إدارة المنتجات
-- **تحسين محركات البحث**: علامات meta وبيانات منظمة
-- **دعم PWA**: ميزات Progressive Web App
-- **Service Worker**: وظائف غير متصلة
-
-### التحسينات التقنية
-- **تحسين الصور**: تنسيق WebP والتحميل الكسول
-- **الأداء**: تقسيم الكود والتجميع
-- **الأمان**: تحسين التحقق من صحة البيانات
-- **إمكانية الوصول**: تحسينات لذوي الاحتياجات الخاصة
-
-## 📄 الترخيص
-
-هذا المشروع مفتوح المصدر ومتاح بموجب [MIT License](LICENSE).
-
-## 🤝 المساهمة
-
-المساهمات مرحب بها! يرجى إرسال Pull Request.
-
-## 📞 الدعم
-
-إذا كان لديك أي أسئلة أو تحتاج مساعدة في التخصيص، يرجى فتح مشكلة في مستودع المشروع.
+## 🤝 Contributing
+PRs are welcome.
 
 ---
-
-**مبني بـ ❤️ لتجارب التجارة الإلكترونية الحديثة** 
+Built with ❤️ to showcase a clean, modern e‑commerce experience. 
