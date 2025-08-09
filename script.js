@@ -22,12 +22,14 @@ function initShoppingCart() {
     const cartCount = document.getElementById('cartCount');
     const cartTotal = document.getElementById('cartTotal');
     const checkoutBtn = document.querySelector('.checkout-btn');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
     
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
     // Update cart display
     function updateCartDisplay() {
-        cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+        const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+        cartCount.textContent = totalItems > 0 ? String(totalItems) : '';
         cartTotal.textContent = `$${cart.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2)}`;
         
         // Update cart items
@@ -77,7 +79,21 @@ function initShoppingCart() {
         
         updateCartDisplay();
         showNotification('Product added to cart!', 'success');
+        // Open cart sidebar after adding
+        cartSidebar.classList.add('active');
     };
+
+    // Wire up all Add to Cart buttons
+    addToCartButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const id = parseInt(btn.dataset.productId, 10);
+            if (!isNaN(id)) {
+                window.addToCart(id);
+            }
+        });
+    });
     
     // Update quantity function
     window.updateQuantity = function(index, change) {
@@ -182,8 +198,7 @@ function initUserLogin() {
         if (email && password) {
             showNotification('Login successful!', 'success');
             loginModal.classList.remove('active');
-            userBtn.innerHTML = '<i class="fas fa-user"></i>';
-            userBtn.querySelector('.badge').textContent = '✓';
+            userBtn.innerHTML = '<i class="fas fa-user"></i><span class="badge"></span>';
         } else {
             showNotification('Please fill in all fields!', 'error');
         }
@@ -202,8 +217,7 @@ function initUserLogin() {
             if (password === confirmPassword) {
                 showNotification('Registration successful!', 'success');
                 loginModal.classList.remove('active');
-                userBtn.innerHTML = '<i class="fas fa-user"></i>';
-                userBtn.querySelector('.badge').textContent = '✓';
+                userBtn.innerHTML = '<i class="fas fa-user"></i><span class="badge"></span>';
             } else {
                 showNotification('Passwords do not match!', 'error');
             }
@@ -258,28 +272,52 @@ function initSmoothScrolling() {
 // Carousel Functionality
 function initCarousel() {
     const indicators = document.querySelectorAll('.indicator');
+    const heroSection = document.querySelector('.hero');
+    const AUTOPLAY = true; // auto-rotation enabled
+    const INTERVAL = 8000; // 8s for a calmer pace
     let currentSlide = 0;
-    
+    let timer = null;
+
+    function goToSlide(index) {
+        indicators.forEach(ind => ind.classList.remove('active'));
+        indicators[index].classList.add('active');
+        currentSlide = index;
+        updateHeroContent(index);
+    }
+
+    function nextSlide() {
+        const next = (currentSlide + 1) % indicators.length;
+        goToSlide(next);
+    }
+
+    function startAutoplay() {
+        if (AUTOPLAY && !timer) {
+            timer = setInterval(nextSlide, INTERVAL);
+        }
+    }
+
+    function stopAutoplay() {
+        if (timer) {
+            clearInterval(timer);
+            timer = null;
+        }
+    }
+
     indicators.forEach((indicator, index) => {
         indicator.addEventListener('click', () => {
-            // Remove active class from all indicators
-            indicators.forEach(ind => ind.classList.remove('active'));
-            // Add active class to clicked indicator
-            indicator.classList.add('active');
-            currentSlide = index;
-            
-            // Update hero content based on slide
-            updateHeroContent(index);
+            stopAutoplay();
+            goToSlide(index);
+            startAutoplay();
         });
     });
-    
-    // Auto-rotate carousel
-    setInterval(() => {
-        currentSlide = (currentSlide + 1) % indicators.length;
-        indicators.forEach(ind => ind.classList.remove('active'));
-        indicators[currentSlide].classList.add('active');
-        updateHeroContent(currentSlide);
-    }, 5000);
+
+    // Pause when hovering over hero
+    if (heroSection) {
+        heroSection.addEventListener('mouseenter', stopAutoplay);
+        heroSection.addEventListener('mouseleave', startAutoplay);
+    }
+
+    startAutoplay();
 }
 
 // Update Hero Content for Different Slides
@@ -292,19 +330,19 @@ function updateHeroContent(slideIndex) {
             title: 'Proident occaecat',
             subtitle: 'Aliquip ex ea commodo consequat',
             description: 'You are permitted to use this Zay CSS template for your commercial websites. You are not permitted to re-distribute the template ZIP file in any kind of template collection websites.',
-            image: 'https://via.placeholder.com/300x400/ffffff/20c997?text=Curology'
+            image: 'images/Curology Product.jpg'
         },
         {
             title: 'Premium Quality',
             subtitle: 'Best Products for You',
             description: 'Discover our premium collection of high-quality products designed to enhance your lifestyle and meet your every need.',
-            image: 'https://via.placeholder.com/300x400/ffffff/20c997?text=Premium'
+            image: 'images/Curology Product.jpg'
         },
         {
             title: 'Special Offers',
             subtitle: 'Limited Time Deals',
             description: 'Take advantage of our special offers and discounts on selected products. Don\'t miss out on these amazing deals!',
-            image: 'https://via.placeholder.com/300x400/ffffff/20c997?text=Offers'
+            image: 'images/Curology Product.jpg'
         }
     ];
     
